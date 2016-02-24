@@ -1,6 +1,6 @@
 {
-  "name": "rc-slider",
-  "version": "3.3.1",
+  "name": "vertical-rc-slider",
+  "version": "3.3.3-vertical",
   "description": "slider ui component for react",
   "keywords": [
     "react",
