@@ -17,9 +17,8 @@ webpackJsonp([0],[
 	var ReactDOM = __webpack_require__(160);
 	var Slider = __webpack_require__(161);
 	
-	var style = { width: 400, margin: 50 };
+	var style = { width: 400, height: 150, margin: 50 };
 	var marks = {
-	  '-10': '-10°C',
 	  0: '0°C',
 	  26: '26°C',
 	  37: '37°C',
@@ -37,62 +36,7 @@ webpackJsonp([0],[
 	  React.createElement(
 	    'div',
 	    { style: style },
-	    React.createElement(
-	      'p',
-	      null,
-	      'Slider with marks, `step=null`'
-	    ),
-	    React.createElement(Slider, { min: -10, marks: marks, step: null, onChange: log, defaultValue: 20 })
-	  ),
-	  React.createElement(
-	    'div',
-	    { style: style },
-	    React.createElement(
-	      'p',
-	      null,
-	      'Slider with marks and steps'
-	    ),
-	    React.createElement(Slider, { dots: true, min: -10, marks: marks, step: 10, onChange: log, defaultValue: 20 })
-	  ),
-	  React.createElement(
-	    'div',
-	    { style: style },
-	    React.createElement(
-	      'p',
-	      null,
-	      'Slider with marks, `included=false`'
-	    ),
-	    React.createElement(Slider, { min: -10, marks: marks, included: false, defaultValue: 20 })
-	  ),
-	  React.createElement(
-	    'div',
-	    { style: style },
-	    React.createElement(
-	      'p',
-	      null,
-	      'Slider with marks and steps, `included=false`'
-	    ),
-	    React.createElement(Slider, { min: -10, marks: marks, step: 10, included: false, defaultValue: 20 })
-	  ),
-	  React.createElement(
-	    'div',
-	    { style: style },
-	    React.createElement(
-	      'p',
-	      null,
-	      'Range with marks'
-	    ),
-	    React.createElement(Slider, { min: -10, range: true, marks: marks, onChange: log, defaultValue: [20, 40] })
-	  ),
-	  React.createElement(
-	    'div',
-	    { style: style },
-	    React.createElement(
-	      'p',
-	      null,
-	      'Range with marks and steps'
-	    ),
-	    React.createElement(Slider, { min: -10, range: true, marks: marks, step: 10, onChange: log, defaultValue: [20, 40] })
+	    React.createElement(Slider, { min: 0, marks: marks, step: 10, onChange: log, defaultValue: 20 })
 	  )
 	), document.getElementById('__react-content'));
 
