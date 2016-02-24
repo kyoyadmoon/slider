@@ -3,9 +3,9 @@ import classNames from 'classnames';
 
 const Marks = ({className, marks, included, upperBound, lowerBound, max, min}) => {
   const marksKeys = Object.keys(marks);
-  const marksCount = marksKeys.length;
-  const unit = 100 / (marksCount - 1);
-  const markWidth = unit * 0.9;
+  // const marksCount = marksKeys.length;
+  // const unit = 100 / (marksCount - 1);
+  // const markWidth = unit * 0.9;
 
   const range = max - min;
   const elements = marksKeys.map(parseFloat).map((point) => {
@@ -16,8 +16,8 @@ const Marks = ({className, marks, included, upperBound, lowerBound, max, min}) =
       [className + '-text-active']: isActived,
     });
 
-    const style = { height: markWidth + '%' };
-    style.bottom = (point - min) / range * 100 - markWidth / 2 + '%';
+    const style = {};
+    style.bottom = (point - min) / range * 100 + '%';
 
     return (<span className={markClassName} style={style} key={point}>
              {marks[point]}
