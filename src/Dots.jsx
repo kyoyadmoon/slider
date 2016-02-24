@@ -16,7 +16,7 @@ const Dots = ({prefixCls, marks, dots, step, included, lowerBound, upperBound, m
   const range = max - min;
   const elements = calcPoints(marks, dots, step, min, max).map((point) => {
     const offset = (point - min) / range * 100 + '%';
-    const style = { left: offset };
+    const style = { bottom: offset };
 
     const isActived = (!included && point === upperBound) ||
             (included && point <= upperBound && point >= lowerBound);

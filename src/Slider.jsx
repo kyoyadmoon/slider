@@ -15,11 +15,11 @@ function isNotTouchEvent(e) {
 }
 
 function getTouchPosition(e) {
-  return e.touches[0].pageX;
+  return e.touches[0].pageY;
 }
 
 function getMousePosition(e) {
-  return e.pageX;
+  return e.pageY;
 }
 
 function pauseEvent(e) {
@@ -101,7 +101,7 @@ class Slider extends React.Component {
 
   onChange(state) {
     const props = this.props;
-    const isNotControlled = !('value' in props);
+    const isNotControlled = !this.props.fixedValue;
     if (isNotControlled) {
       this.setState(state);
     } else if (state.handle) {
@@ -133,7 +133,7 @@ class Slider extends React.Component {
     const props = this.props;
     const state = this.state;
 
-    const diffPosition = position - this.startPosition;
+    const diffPosition = this.startPosition - position;
     const diffValue = diffPosition / this.getSliderLength() * (props.max - props.min);
 
     const value = this.trimAlignValue(this.startValue + diffValue);
@@ -230,14 +230,14 @@ class Slider extends React.Component {
       return 0;
     }
 
-    return slider.clientWidth;
+    return slider.clientHeight;
   }
 
   getSliderStart() {
     const slider = this.refs.slider;
     const rect = slider.getBoundingClientRect();
 
-    return rect.left;
+    return rect.bottom;
   }
 
   getPrecision() {
@@ -298,7 +298,7 @@ class Slider extends React.Component {
   }
 
   calcValueByPos(position) {
-    const pixelOffset = position - this.getSliderStart();
+    const pixelOffset = this.getSliderStart() - position;
     const nextValue = this.trimAlignValue(this.calcValue(pixelOffset));
     return nextValue;
   }
@@ -404,6 +404,7 @@ Slider.propTypes = {
   dots: React.PropTypes.bool,
   range: React.PropTypes.bool,
   allowCross: React.PropTypes.bool,
+  fixedValue: React.PropTypes.bool,
 };
 
 Slider.defaultProps = {
@@ -423,6 +424,7 @@ Slider.defaultProps = {
   dots: false,
   range: false,
   allowCross: true,
+  fixedValue: false,
 };
 
 export default Slider;

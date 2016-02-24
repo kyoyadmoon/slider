@@ -16,8 +16,8 @@ const Marks = ({className, marks, included, upperBound, lowerBound, max, min}) =
       [className + '-text-active']: isActived,
     });
 
-    const style = { width: markWidth + '%' };
-    style.left = (point - min) / range * 100 - markWidth / 2 + '%';
+    const style = { height: markWidth + '%' };
+    style.bottom = (point - min) / range * 100 - markWidth / 2 + '%';
 
     return (<span className={markClassName} style={style} key={point}>
              {marks[point]}
