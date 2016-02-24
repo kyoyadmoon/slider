@@ -408,7 +408,7 @@ Slider.propTypes = {
 };
 
 Slider.defaultProps = {
-  prefixCls: 'rc-slider',
+  prefixCls: 'vertical-rc-slider',
   className: '',
   tipTransitionName: '',
   min: 0,
