@@ -41,7 +41,7 @@
 .vertical-rc-slider-mark {
   position: absolute;
   left: 10px;
-  bottom: 0px;
+  bottom: -2px;
   height: 100%;
   font-size: 12px;
   z-index: 3;
@@ -53,11 +53,10 @@
   text-align: center;
   cursor: pointer;
   color: #999;
-  margin-bottom: -7px;
 }
 .vertical-rc-slider-mark-text:first-of-type,
 .vertical-rc-slider-mark-text:last-of-type {
-  margin-bottom: -12px;
+  margin-bottom: -5px;
 }
 .vertical-rc-slider-mark-text-active {
   color: #666;
